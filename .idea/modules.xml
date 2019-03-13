@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ideaProject/TestJvava/TestJvava.iml" filepath="$PROJECT_DIR$/../ideaProject/TestJvava/TestJvava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestMaven/TestMaven.iml" filepath="$PROJECT_DIR$/TestMaven/TestMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestSpringboot/TestSpringboot.iml" filepath="$PROJECT_DIR$/TestSpringboot/TestSpringboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-Mapper/common-Mapper.iml" filepath="$PROJECT_DIR$/common-Mapper/common-Mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbg/mbg.iml" filepath="$PROJECT_DIR$/mbg/mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textWeb/textWeb.iml" filepath="$PROJECT_DIR$/textWeb/textWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/upFile/upFile.iml" filepath="$PROJECT_DIR$/upFile/upFile.iml" />
+    </modules>
+  </component>
+</project>

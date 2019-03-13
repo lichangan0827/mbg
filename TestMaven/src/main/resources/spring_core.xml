@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+
+
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+<!-- 配置Spring 注解扫描   -->
+	<context:component-scan base-package="com.baizhi.*"></context:component-scan>
+<!-- 导入数据源   -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/cmfz"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="hr"></property>
+		<!-- 配置连接池   -->
+		<property name="initialSize" value="5"></property>
+		<property name="maxActive" value="20"></property>
+		<property name="maxWait" value="1000"></property>
+	</bean>
+<!-- 配置sqlsessionFactory  -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据源   -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 寻找Mapper  -->
+		<property name="mapperLocations"  value="classpath:com/baizhi/mapper/*Mapper.xml"></property>
+		<!-- 实体类起别名   -->
+		<property name="typeAliasesPackage" value="com.baizhi.entity"></property>
+	</bean>
+<!-- 配置DAO  -->
+	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+		<property name="basePackage" value="com.baizhi.dao"></property>
+	</bean>
+<!-- 配置事务  -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+<!-- 开启事务驱动  -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--代表日志展示的位置
+		name：输出的别名
+		class：以哪种方式输出 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!--输出的格式-->
+            <pattern>[%p] %d{yyyy-MM-dd HH:mm:ss} %m %n</pattern>
+        </layout>
+    </appender>
+    <!--项目中的根日志，指定输出级别-->
+    <root level="INFO">
+        <!--输出位置-->
+        <appender-ref ref="stdout"/>
+    </root>
+    <!--项目中的子日志，指定输出级别，继承根日志的输出位置-->
+    <logger name="com.baizhi.dao" level="DEBUG"/>
+</configuration>

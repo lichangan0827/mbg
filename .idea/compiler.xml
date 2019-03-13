@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common-Mapper" />
+        <module name="demo" />
+        <module name="mbg" />
+        <module name="TestMaven" />
+        <module name="TestSpringboot" />
+        <module name="upFile" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-Mapper" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="mbg" target="1.8" />
+      <module name="Mybatis-generator" target="1.8" />
+      <module name="testMaven" target="1.5" />
+      <module name="TestMaven" target="1.7" />
+      <module name="TestSpringboot" target="1.7" />
+      <module name="upFile" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Mybatis-generator" options="" />
+      <module name="common-Mapper" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="mbg" options="" />
+      <module name="upFile" options="" />
+    </option>
+  </component>
+</project>
